@@ -19,7 +19,6 @@ services:
        - "bin/run.sh" 
     volumes:
        - ./leanote/:/opt/leanote
-       - ./leanote/conf/app.conf:/opt/leanote/conf/app.conf
     ports:
       - 1993:9000 
    
