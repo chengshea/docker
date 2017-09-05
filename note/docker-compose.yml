@@ -1,0 +1,25 @@
+version: '2'
+services:
+   mongo:
+    image: mongo:3.5.12
+    container_name: mongo
+    ports:
+      - 27017 
+    volumes:
+     - ./mongod.conf:/etc/mongod.conf
+     - ./db:/data/db
+   leanote:
+    image: debian:jessie-slim
+    container_name: leanote
+    working_dir: /opt/leanote
+    links:
+       - mongo
+    command:
+       - "bash" 
+       - "bin/run.sh" 
+    volumes:
+       - ./leanote/:/opt/leanote
+       - ./leanote/conf/app.conf:/opt/leanote/conf/app.conf
+    ports:
+      - 1993:9000 
+   
