@@ -1,0 +1,13 @@
+version: '2'
+services:
+   alisql:
+    build: ./
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=19930221
+    ports:
+      - '13306:3306'
+    volumes:
+      - './data:/var/lib/mysql'
+      - './bin_log:/var/log/mysql/:rw'
+      - './alisql.cnf:/etc/mysql/conf.d/mysql.cnf'
