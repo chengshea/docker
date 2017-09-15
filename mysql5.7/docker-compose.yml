@@ -8,5 +8,5 @@ services:
       - '13306:3306'
     volumes:
       - './data:/var/lib/mysql'
-      - './bin_log:/var/log/mysql/:rw'
+      - './bin_log:/var/lib/mysql/bin_log:rw'
       - './mysql.cnf:/etc/mysql/conf.d/mysql.cnf'
