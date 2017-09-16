@@ -1,0 +1,33 @@
+#配置文件由条目组成，每个正则表达式一个，条目用第一个字符非字母数字（＃除外）的行分隔
+#以＃或空行开头的行将被忽略,多个只有最后一个生效
+#git https://github.com/garabik/grc/tree/master
+#default word color
+regexp=.+
+colours=green
+-
+
+regexp=[+\-]+[+\-]|[|]
+colours=red
+-
+
+# d
+regexp=\([\w\d,']+\)
+colours=white
+-
+# numeric
+regexp=\s[\d\.]+\s*($|(?=\|))
+colours=yellow
+-
+# date
+regexp=\d{4}-\d{2}-\d{2}
+colours=cyan
+-
+# time
+regexp=\d{2}:\d{2}:\d{2}
+colours=cyan
+
+
+
+
+
+
