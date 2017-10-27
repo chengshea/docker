@@ -32,3 +32,4 @@ source ~/.bashrc
  mysql -uroot -p
 ```
 
+![pic](http://ojtd6k176.bkt.clouddn.com/2017%E5%B9%B410%E6%9C%8827%E6%97%A5%20-%2014%E6%97%B633%E5%88%8639%E7%A7%92.png)
