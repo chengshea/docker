@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=start-hot-wifi
+Name[zh_CN]=开启热点
+Comment[zh_CN]=创建热点
+GenericName=Shadowsocks Client
+Comment=hot-wifi Manager Client.
+Path=/opt/hot-wifi/create_ap
+Exec=/opt/hot-wifi/create_ap/start.sh
+Icon=/home/cs/.local/share/icons/ap_start.png
+Categories=Cutom-Network
