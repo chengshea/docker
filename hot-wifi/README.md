@@ -35,7 +35,8 @@ sudo apt-file update
 ```
 sudo  apt-file search   netlink/genl/genl.h
 ```
-安装缺失依赖
+安装缺失依赖 
+编译安装
 
 ```
 make 
@@ -66,3 +67,9 @@ ap0: interface state UNINITIALIZED->ENABLED <br/>
 ap0: AP-ENABLED   <br/>
 WARN: Low entropy detected. We recommend you to install `haveged'
 
+### 脚本控制
+开启
+start-wifi.desktop 
+
+关闭
+stop-wifi.desktop
