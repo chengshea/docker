@@ -6,3 +6,6 @@
  
 ## lssues
 hexo 利用github application 用 lssues 做评论（样式文件）
+
+## web-print 
+web 打印

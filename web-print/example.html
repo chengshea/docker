@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery.Print</title>
+       <script src="js/jquery.min.js"></script>
+        <script src="js/jQuery.print.js"></script>
+    </head>
+<body>
+<style>
+.img-box{  
+    float:left; 
+}  
+.img-box img{  
+    position:absolute;    
+    width:45%;  
+
+}  
+.text {
+    width: 45%;
+    float:right;
+}
+.pic{
+   position:fixed;
+   bottom:0;
+}
+.all{
+   position:fixed;
+   bottom:0;
+   left: 65%;
+}
+#js{
+   position:fixed;
+   bottom:0;
+   left: 25%;
+}
+</style>
+<div id="ele1" class="a">
+<p>
+拿破仑·波拿巴（法语：Napoléon Bonaparte/意大利语：Napoleone Buonaparte，1769年8月15日－1821年5月5日），即拿破仑一世（Napoléon I），出生于科西嘉岛，十九世纪法国伟大的军事家、政治家，法兰西第一帝国的缔造者。历任法兰西第一共和国第一执政（1799年－1804年），法兰西第一帝国皇帝（1804年－1815年）。
+</p>
+<button class="print-link no-print" onclick="jQuery('#ele1').print()">
+               打印 (jQuery('#ele1').print())  按钮 .no-print
+ </button>
+</div>
+<div id="ele4">
+<div id="ele2" class="img-box">
+<img src="eg.png" >
+</div>
+
+<div id="ele3" class="text">
+<h4>globalStyles</h4>
+
+<ul>
+<li>Default: <code>true</code><br>
+</li>
+<li>Acceptable-Values: Boolean<br>
+</li>
+<li>Function: Whether or not the styles from the parent document should be included</li>
+</ul><h4>mediaPrint</h4>
+
+<ul>
+<li>Default: <code>false</code><br>
+</li>
+<li>Acceptable-Values: Boolean<br>
+</li>
+<li>Function: Whether or not link tags with media='print' should be included; Over-riden by the <code>globalStyles</code> option</li>
+<button class="print-link no-print" onclick="jQuery('#ele3').print()">
+               打印 (jQuery('#ele3').print()) 按钮 .no-print
+ </button>
+</div>
+<div id="ele5" >
+<button class="print-link " id="js" >
+               打印 ($.print(#ele5')) 包含按钮
+ </button>
+</div>
+<button class="pic" onclick="jQuery('#ele4').print()">
+               打印 (jQuery('#ele4').print()) 包含按钮
+ </button>
+</div>
+<button class="all" onclick="jQuery().print()">
+               打印 (jQuery().print()) 打印整页
+ </button>
+ <script type='text/javascript'>
+        jQuery(function($) { 'use strict';
+
+            $("#ele5").find('button').on('click', function() {
+                //Print ele4 with custom options
+                $("#ele5").print({
+                    //Use Global styles
+                    globalStyles : false,
+                    //Add link with attrbute media=print
+                    mediaPrint : false,
+                    //Custom stylesheet
+                    stylesheet : "http://fonts.googleapis.com/css?family=Inconsolata",
+                    //Print in a hidden iframe
+                    iframe : false,
+                    //Don't print this
+                    noPrintSelector : ".avoid-this",
+                    //Add this at top
+                    prepend : "Hello World!!!--------------<br/>",
+                    //Add this on bottom
+                    append : "<br/>Buh Bye!",
+                    //Log to console when printing is done via a deffered callback
+                    deferred: $.Deferred().done(function() {console.log('Printing done', arguments); })
+                });
+            });
+        });
+        </script>
+</body>
+</html>
